@@ -75,8 +75,11 @@ class ViewController: UIViewController {
         request.region = mapView.region
         
         let search = MKLocalSearch(request: request)
-        search.start { response, error in
+        search.start { [weak self] response, error in
             guard let response = response, error == nil else {return}
+            response.mapItems.forEach {mark in
+                self?.mapView.addAnnotation(PlaceAnnotation(mapItem: mark))
+            }
             print(response.mapItems)
         }
     }
@@ -100,6 +103,7 @@ extension ViewController: CLLocationManagerDelegate {
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //findNearbyPlaces(query: searchText)
@@ -107,6 +111,15 @@ extension ViewController: UISearchBarDelegate {
     }
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         print("TEXT FINISHED CHANGING")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search b")
+        let searchString = searchBar.text
+        if let text = searchString {
+            findNearbyPlaces(query: text)
+        }
+        searchBar.endEditing(true)
     }
 }
 
