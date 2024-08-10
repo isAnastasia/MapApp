@@ -77,10 +77,15 @@ class ViewController: UIViewController {
         let search = MKLocalSearch(request: request)
         search.start { [weak self] response, error in
             guard let response = response, error == nil else {return}
-            response.mapItems.forEach {mark in
-                self?.mapView.addAnnotation(PlaceAnnotation(mapItem: mark))
+            let places = response.mapItems.map { item in
+                return PlaceAnnotation(mapItem: item)
             }
-            print(response.mapItems)
+            //self?.mapView.addAnnotations(places)
+            let vc = ResultTableViewController(places: places)
+            vc.modalPresentationStyle = .pageSheet
+            self?.present(vc, animated: true)
+            //print(response.mapItems)
+            
         }
     }
     

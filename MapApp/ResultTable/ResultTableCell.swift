@@ -13,7 +13,6 @@ final class ResultTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layer.cornerRadius = 16
-        backgroundColor = .blue.withAlphaComponent(0.3)
     }
     
     required init?(coder: NSCoder) {

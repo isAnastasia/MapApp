@@ -31,21 +31,27 @@ final class ResultTableViewController: UIViewController {
     
     //MARK: - Private Functions
     private func setUpUI() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: ResultTableViewCell.identifier)
         
         view.addSubview(tableView)
-        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 36),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 2),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])       
     }
 }
 
 //MARK: - UITableViewDataSource
 extension ResultTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        places.count
+        print(places.count)
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,5 +67,7 @@ extension ResultTableViewController: UITableViewDataSource {
 }
 
 extension ResultTableViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+    }
 }
