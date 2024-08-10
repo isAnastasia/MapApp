@@ -14,6 +14,8 @@
 		33510A222C55735900900C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33510A202C55735900900C77 /* LaunchScreen.storyboard */; };
 		33DFC7D02C64EC0F0042F889 /* PlaceAnnotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DFC7CF2C64EC0F0042F889 /* PlaceAnnotationModel.swift */; };
 		33DFC7D32C64ED580042F889 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DFC7D22C64ED580042F889 /* CLLocation+Extensions.swift */; };
+		33DFC7D62C655C870042F889 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DFC7D52C655C870042F889 /* ResultTableViewController.swift */; };
+		33DFC7D92C655E150042F889 /* ResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DFC7D82C655E150042F889 /* ResultTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		33510A232C55735900900C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DFC7CF2C64EC0F0042F889 /* PlaceAnnotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationModel.swift; sourceTree = "<group>"; };
 		33DFC7D22C64ED580042F889 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		33DFC7D52C655C870042F889 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		33DFC7D82C655E150042F889 /* ResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				33DFC7D42C6512EE0042F889 /* Models */,
 				33DFC7D12C64ED420042F889 /* Extensions */,
 				33510A192C55735600900C77 /* ViewController.swift */,
+				33DFC7D72C655DF90042F889 /* ResultTable */,
 				33510A152C55735600900C77 /* AppDelegate.swift */,
 				33510A172C55735600900C77 /* SceneDelegate.swift */,
 				33510A1E2C55735900900C77 /* Assets.xcassets */,
@@ -84,6 +89,15 @@
 				33DFC7CF2C64EC0F0042F889 /* PlaceAnnotationModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		33DFC7D72C655DF90042F889 /* ResultTable */ = {
+			isa = PBXGroup;
+			children = (
+				33DFC7D52C655C870042F889 /* ResultTableViewController.swift */,
+				33DFC7D82C655E150042F889 /* ResultTableCell.swift */,
+			);
+			path = ResultTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				33510A1A2C55735600900C77 /* ViewController.swift in Sources */,
+				33DFC7D92C655E150042F889 /* ResultTableCell.swift in Sources */,
 				33510A162C55735600900C77 /* AppDelegate.swift in Sources */,
+				33DFC7D62C655C870042F889 /* ResultTableViewController.swift in Sources */,
 				33DFC7D02C64EC0F0042F889 /* PlaceAnnotationModel.swift in Sources */,
 				33510A182C55735600900C77 /* SceneDelegate.swift in Sources */,
 				33DFC7D32C64ED580042F889 /* CLLocation+Extensions.swift in Sources */,
